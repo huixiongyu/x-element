@@ -30,8 +30,8 @@
     font-size: var(--el-alert-close-font-size);
     opacity: 1;
     position: absolute;
-    top: 12px;
-    right: 15px;
+    top: 6px;
+    right: 12px;
     cursor: pointer;
     .hx-icon {
       vertical-align: top;

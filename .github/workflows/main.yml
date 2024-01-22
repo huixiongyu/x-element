@@ -23,13 +23,15 @@ jobs:
           npm install
           npm run docs:build
           echo 'element.hackslog.com' > docs/.vitepress/dist/CNAME
-          mv docs/.vitepress/dist ./
           ls
 
       - name: Upload to OSS
-        uses: YangHanlin/oss-deployment-action@v1
+        id: upload_to_oss
+        uses: tvrcgo/upload-to-oss@v0.1.1
         with:
-          oss-endpoint: oss-cn-guangzhou.aliyuncs.com
-          access-key-id: ${{ secrets.ALIYUN_OSS_ACCESS_KEY_ID }}
-          access-key-secret: ${{ secrets.ALIYUN_OSS_ACCESS_KEY_SECRET }}
-          oss-path: 'oss://${{ secrets.ALIYUN_OSS_BUCKET }}/'
+          key-id: ${{ secrets.ALIYUN_OSS_ACCESS_KEY_ID }}
+          key-secret: ${{ secrets.ALIYUN_OSS_ACCESS_KEY_SECRET }}
+          region: oss-cn-guangzhou
+          bucket: ${{ secrets.ALIYUN_OSS_BUCKET }}
+          asset-path: docs/.vitepress/dist/
+          target-path: /

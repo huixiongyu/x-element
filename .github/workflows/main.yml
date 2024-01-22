@@ -3,7 +3,7 @@ name: Deploy to OSS
 on:
   push:
     branches:
-      - main # 替换为你的默认分支
+      - master # 替换为你的默认分支
 
 jobs:
   deploy:

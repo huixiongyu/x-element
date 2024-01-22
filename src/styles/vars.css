@@ -1,0 +1,67 @@
+:root {
+  /* colors */
+  --hx-color-white: #ffffff;
+  --hx-color-black: #000000;
+  --colors: (primary: #409eff, success: #67c23a, warning: #e6a23c, danger: #f56c6c, info: #909399);
+
+  @each $val, $color in var(--colors) {
+    --hx-color-$(val): $(color);
+    @for $i from 3 to 9 by 2 {
+      --hx-color-$(val)-light-$(i): mix(#fff, $(color), .$(i));
+    }
+    --hx-color-$(val)-light-8: mix(#fff, $(color), 0.8);
+    --hx-color-$(val)-dark-2: mix(#000, $(color), 0.2);
+  }
+
+  --hx-bg-color: #ffffff;
+  --hx-bg-color-page: #f2f3f5;
+  --hx-bg-color-overlay: #ffffff;
+  --hx-text-color-primary: #303133;
+  --hx-text-color-regular: #606266;
+  --hx-text-color-secondary: #909399;
+  --hx-text-color-placeholder: #a8abb2;
+  --hx-text-color-disabled: #c0c4cc;
+  --hx-border-color: #dcdfe6;
+  --hx-border-color-light: #e4e7ed;
+  --hx-border-color-lighter: #ebeef5;
+  --hx-border-color-extra-light: #f2f6fc;
+  --hx-border-color-dark: #d4d7de;
+  --hx-border-color-darker: #cdd0d6;
+  --hx-fill-color: #f0f2f5;
+  --hx-fill-color-light: #f5f7fa;
+  --hx-fill-color-lighter: #fafafa;
+  --hx-fill-color-extra-light: #fafcff;
+  --hx-fill-color-dark: #ebedf0;
+  --hx-fill-color-darker: #e6e8eb;
+  --hx-fill-color-blank: #ffffff;
+
+  /* border */
+  --hx-border-width: 1px;
+  --hx-border-style: solid;
+  --hx-border-color-hover: var(--hx-text-color-disabled);
+  --hx-border: var(--hx-border-width) var(--hx-border-style) var(--hx-border-color);
+  --hx-border-radius-base: 4px;
+  --hx-border-radius-small: 2px;
+  --hx-border-radius-round: 20px;
+  --hx-border-radius-circle: 100%;
+
+  /*font*/
+  --hx-font-size-extra-large: 20px;
+  --hx-font-size-large: 18px;
+  --hx-font-size-medium: 16px;
+  --hx-font-size-base: 14px;
+  --hx-font-size-small: 13px;
+  --hx-font-size-extra-small: 12px;
+  --hx-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
+  --hx-font-weight-primary: 500;
+
+  /*disabled*/
+  --hx-disabled-bg-color: var(--hx-fill-color-light);
+  --hx-disabled-text-color: var(--hx-text-color-placeholder);
+  --hx-disabled-border-color: var(--hx-border-color-light);
+
+  /*animation*/
+  --hx-transition-duration: 0.3s;
+  --hx-transition-duration-fast: 0.2s;
+}

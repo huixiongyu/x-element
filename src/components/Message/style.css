@@ -1,0 +1,58 @@
+.hx-message {
+  --hx-message-bg-color: var(--hx-color-info-light-9);
+  --hx-message-border-color: var(--hx-border-color-lighter);
+  --hx-message-padding: 15px 19px;
+  --hx-message-close-size: 16px;
+  --hx-message-close-icon-color: var(--hx-text-color-placeholder);
+  --hx-message-close-hover-color: var(--hx-text-color-secondary);
+}
+.hx-message {
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  box-sizing: border-box;
+  border-radius: var(--hx-border-radius-base);
+  border-width: var(--hx-border-width);
+  border-style: var(--hx-border-style);
+  border-color: var(--hx-message-border-color);
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  background-color: var(--hx-message-bg-color);
+  padding: var(--hx-message-padding);
+  display: flex;
+  align-items: center;
+  transition:
+    top var(--hx-transition-duration),
+    opacity var(--hx-transition-duration),
+    transform var(--hx-transition-duration);
+  .hx-message__content {
+    color: var(--hx-message-text-color);
+    overflow-wrap: anywhere;
+  }
+  &.is-close .hx-message__content {
+    padding-right: 30px;
+  }
+  .hx-message__close {
+    display: flex;
+    align-items: center;
+  }
+  .hx-message__close svg {
+    cursor: pointer;
+  }
+}
+@each $val in info, success, warning, danger {
+  .hx-message--$(val) {
+    --hx-message-bg-color: var(--hx-color-$(val)-light-9);
+    --hx-message-border-color: var(--hx-color-$(val)-light-8);
+    --hx-message-text-color: var(--hx-color-$(val));
+    .hx-message__close {
+      --hx-icon-color: var(--hx-color-$(val));
+    }
+  }
+}
+.hx-message.fade-up-enter-from,
+.hx-message.fade-up-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}

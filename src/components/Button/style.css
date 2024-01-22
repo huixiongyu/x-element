@@ -1,0 +1,127 @@
+.hx-button {
+  --hx-button-font-weight: var(--hx-font-weight-primary);
+  --hx-button-border-color: var(--hx-border-color);
+  --hx-button-bg-color: var(--hx-fill-color-blank);
+  --hx-button-text-color: var(--hx-text-color-regular);
+  --hx-button-disabled-text-color: var(--hx-disabled-text-color);
+  --hx-button-disabled-bg-color: var(--hx-fill-color-blank);
+  --hx-button-disabled-border-color: var(--hx-border-color-light);
+  --hx-button-hover-text-color: var(--hx-color-primary);
+  --hx-button-hover-bg-color: var(--hx-color-primary-light-9);
+  --hx-button-hover-border-color: var(--hx-color-primary-light-7);
+  --hx-button-active-text-color: var(--hx-button-hover-text-color);
+  --hx-button-active-border-color: var(--hx-color-primary);
+  --hx-button-active-bg-color: var(--hx-button-hover-bg-color);
+  --hx-button-outline-color: var(--hx-color-primary-light-5);
+  --hx-button-active-color: var(--hx-text-color-primary);
+}
+.hx-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--hx-button-text-color);
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.1s;
+  font-weight: var(--hx-button-font-weight);
+  user-select: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  background-color: var(--hx-button-bg-color);
+  border: var(--hx-border);
+  border-color: var(--hx-button-border-color);
+  padding: 8px 15px;
+  font-size: var(--hx-font-size-base);
+  border-radius: var(--hx-border-radius-base);
+  & + & {
+    margin-left: 12px;
+  }
+  &:hover,
+  &:focus {
+    color: var(--hx-button-hover-text-color);
+    border-color: var(--hx-button-hover-border-color);
+    background-color: var(--hx-button-hover-bg-color);
+    outline: none;
+  }
+  &:active {
+    color: var(--hx-button-active-text-color);
+    border-color: var(--hx-button-active-border-color);
+    background-color: var(--hx-button-active-bg-color);
+    outline: none;
+  }
+  &.is-plain {
+    --hx-button-hover-text-color: var(--hx-color-primary);
+    --hx-button-hover-bg-color: var(--hx-fill-color-blank);
+    --hx-button-hover-border-color: var(--hx-color-primary);
+  }
+  /*round*/
+  &.is-round {
+    border-radius: var(--hx-border-radius-round);
+  }
+  /*circle*/
+  &.is-circle {
+    border-radius: 50%;
+    padding: 8px;
+  }
+  /*disabled*/
+  &.is-disabled,
+  &.is-disabled:hover,
+  &.is-disabled:focus,
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:focus {
+    color: var(--hx-button-disabled-text-color);
+    cursor: not-allowed;
+    background-image: none;
+    background-color: var(--hx-button-disabled-bg-color);
+    border-color: var(--hx-button-disabled-border-color);
+  }
+  [class*='hx-icon'] + span {
+    margin-left: 6px;
+  }
+}
+@each $val in primary, success, warning, info, danger {
+  .hx-button--$(val) {
+    --hx-button-text-color: var(--hx-color-white);
+    --hx-button-bg-color: var(--hx-color-$(val));
+    --hx-button-border-color: var(--hx-color-$(val));
+    --hx-button-outline-color: var(--hx-color-$(val)-light-5);
+    --hx-button-active-color: var(--hx-color-$(val)-dark-2);
+    --hx-button-hover-text-color: var(--hx-color-white);
+    --hx-button-hover-bg-color: var(--hx-color-$(val)-light-3);
+    --hx-button-hover-border-color: var(--hx-color-$(val)-light-3);
+    --hx-button-active-bg-color: var(--hx-color-$(val)-dark-2);
+    --hx-button-active-border-color: var(--hx-color-$(val)-dark-2);
+    --hx-button-disabled-text-color: var(--hx-color-white);
+    --hx-button-disabled-bg-color: var(--hx-color-$(val)-light-5);
+    --hx-button-disabled-border-color: var(--hx-color-$(val)-light-5);
+  }
+  .hx-button--$(val).is-plain {
+    --hx-button-text-color: var(--hx-color-$(val));
+    --hx-button-bg-color: var(--hx-color-$(val)-light-9);
+    --hx-button-border-color: var(--hx-color-$(val)-light-5);
+    --hx-button-hover-text-color: var(--hx-color-white);
+    --hx-button-hover-bg-color: var(--hx-color-$(val));
+    --hx-button-hover-border-color: var(--hx-color-$(val));
+    --hx-button-active-text-color: var(--hx-color-white);
+  }
+}
+.hx-button--large {
+  --hx-button-size: 40px;
+  height: var(--hx-button-size);
+  padding: 12px 19px;
+  font-size: var(--hx-font-size-base);
+  border-radius: var(--hx-border-radius-base);
+}
+.hx-button--small {
+  --hx-button-size: 24px;
+  height: var(--hx-button-size);
+  padding: 5px 11px;
+  font-size: 12px;
+  border-radius: calc(var(--hx-border-radius-base) - 1px);
+}

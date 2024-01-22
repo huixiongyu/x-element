@@ -1,0 +1,50 @@
+.hx-form {
+  --hx-form-label-font-size: var(--hx-font-size-base);
+  --hx-form-content-font-size: var(--hx-font-size-base);
+}
+.hx-form-item {
+  display: flex;
+  margin-bottom: 18px;
+  .hx-form-item__label {
+    width: 150px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 12px 0 0;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: flex-end;
+    font-size: var(--hx-form-label-font-size);
+    color: var(--hx-text-color-regular);
+  }
+  .hx-form-item__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1;
+    line-height: 32px;
+    font-size: var(--hx-form-content-font-size);
+    min-width: 0;
+    position: relative;
+  }
+  .hx-form-item__error-msg {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-top: 2px;
+    color: var(--hx-color-danger);
+    font-size: 12px;
+    line-height: 1;
+  }
+}
+
+.hx-form-item.is-error .hx-input__wrapper {
+  box-shadow: 0 0 0 1px var(--hx-color-danger) inset;
+}
+.hx-form-item.is-success .hx-input__wrapper {
+  box-shadow: 0 0 0 1px var(--hx-color-success) inset;
+}
+.hx-form-item.is-required > .hx-form-item__label::before {
+  content: '*';
+  color: var(--hx-color-danger);
+  margin-right: 4px;
+}

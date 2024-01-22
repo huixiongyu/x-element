@@ -1,0 +1,16 @@
+.vk-icon {
+  --hx-icon-color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--hx-icon-color);
+  font-size: inherit;
+}
+
+@each $val in primary, info, success, warning, danger {
+  .hx-icon--$(val) {
+    --hx-icon-color: var(--hx-color-$(val));
+  }
+}

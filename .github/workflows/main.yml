@@ -27,7 +27,7 @@ jobs:
 
       - name: Upload to OSS
         id: upload_to_oss
-        uses: tvrcgo/upload-to-oss@v0.1.1
+        uses: tvrcgo/upload-to-oss@v0.2.2
         with:
           key-id: ${{ secrets.ALIYUN_OSS_ACCESS_KEY_ID }}
           key-secret: ${{ secrets.ALIYUN_OSS_ACCESS_KEY_SECRET }}

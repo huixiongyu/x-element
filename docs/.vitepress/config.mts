@@ -66,6 +66,6 @@ export default defineConfig({
       prev: '上一页',
       next: '下一页'
     },
-    socialLinks: [{ icon: 'github', link: 'https://github.com/huixiongyu?tab=repositories' }]
+    socialLinks: [{ icon: 'github', link: 'https://github.com/huixiongyu/x-element' }]
   }
 })

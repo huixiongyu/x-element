@@ -19,6 +19,7 @@ export default defineConfig({
   },
   title: 'X-Element',
   description: 'A component kits simulate to Element Plus',
+  head: [['link', { rel: 'icon', type: 'image/png', href: '/favicon.ico' }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

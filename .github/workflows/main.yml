@@ -24,11 +24,12 @@ jobs:
           npm run docs:build
           echo 'element.hackslog.com' > docs/.vitepress/dist/CNAME
           mv docs/.vitepress/dist ./
+          ls
 
       - name: Upload to OSS
         uses: YangHanlin/oss-deployment-action@v1
         with:
-          oss-endpoint: '${{ secrets.ALIYUN_OSS_REGION }}.aliyuncs.com'
+          oss-endpoint: oss-cn-guangzhou.aliyuncs.com
           access-key-id: ${{ secrets.ALIYUN_OSS_ACCESS_KEY_ID }}
           access-key-secret: ${{ secrets.ALIYUN_OSS_ACCESS_KEY_SECRET }}
           oss-path: 'oss://${{ secrets.ALIYUN_OSS_BUCKET }}/'

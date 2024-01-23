@@ -14,6 +14,7 @@ import Switch from '@/components/Switch'
 import Tooltip from '@/components/Tooltip'
 import Alert from '@/components/Alert'
 import Notification from '@/components/Notification'
+import Split from '@/components/Split'
 
 import './styles/index.css'
 
@@ -33,7 +34,8 @@ const components = [
   Switch,
   Tooltip,
   Alert,
-  Notification
+  Notification,
+  Split
 ]
 
 const install = (app: App) => {
@@ -57,7 +59,8 @@ export {
   Switch,
   Tooltip,
   createMessage,
-  closeMessageAll
+  closeMessageAll,
+  Split
 }
 
 export default {

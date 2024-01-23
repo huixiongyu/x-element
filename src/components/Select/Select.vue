@@ -81,7 +81,7 @@ const findOption = (value: string) => {
   return option ? option : null
 }
 defineOptions({
-  name: 'hxSelect'
+  name: 'HxSelect'
 })
 const props = withDefaults(defineProps<SelectProps>(), {
   options: () => []

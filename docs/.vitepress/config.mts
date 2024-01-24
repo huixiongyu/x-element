@@ -25,7 +25,8 @@ export default defineConfig({
     nav: [
       { text: '指南', link: '/beginning' },
       { text: '组件', link: '/components/button' },
-      { text: '文档', link: '/documents/index' }
+      { text: '文档', link: '/documents/index' },
+      { text: '发布日志', link: '/logs' }
     ],
 
     sidebar: [

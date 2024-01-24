@@ -59,6 +59,7 @@
     "@popperjs/core": "^2.11.8",
     "async-validator": "^4.2.5",
     "axios": "^1.6.5",
+    "dayjs": "^1.11.10",
     "lodash-es": "^4.17.21"
   },
   "peerDependencies": {

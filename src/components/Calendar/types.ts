@@ -12,10 +12,15 @@ export interface CalenderDateCell {
   type: CalenderDateCellType
 }
 
+export interface PropsOption {
+  width?: string
+  height?: string
+}
+
 export interface CalendarProps {
   modelValue: Date
   firstDay?: number
-  options?: object
+  options: PropsOption
 }
 
 export interface ChangeOption {

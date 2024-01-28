@@ -45,7 +45,8 @@ export default defineConfig({
         text: '数据展示',
         items: [
           { text: 'Collapse 折叠面板', link: '/components/collapse' },
-          { text: 'Split 分割面板', link: '/components/split' }
+          { text: 'Split 分割面板', link: '/components/split' },
+          { text: 'Calendar 日历', link: '/components/calendar' }
         ]
       },
       {

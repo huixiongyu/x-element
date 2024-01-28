@@ -18,7 +18,7 @@
       display: flex;
       align-items: center;
       border: 1px solid var(--hx-border-color);
-      border-radius: var(--hx-border-sm-radius);
+      border-radius: var(--hx-border-radius-small);
       .prev,
       .current,
       .next {
@@ -36,7 +36,7 @@
       .next {
         height: 100%;
         &:hover {
-          background-color: var(--hx-theme-interact-bg-color);
+          background-color: var(--hx-color-primary-light-9);
         }
       }
       .prev {
@@ -86,7 +86,7 @@
     }
     .day-cell {
       &:hover {
-        background-color: var(--hx-theme-interact-bg-color);
+        background-color: var(--hx-color-primary-light-9);
       }
       p {
         margin: 0;
@@ -97,8 +97,8 @@
       color: #d0d0d0;
     }
     .selected {
-      color: var(--hx-theme-interact-color);
-      background: var(--hx-theme-interact-bg-color);
+      color: var(--hx-color-primary);
+      background: var(--hx-color-primary-light-9);
     }
   }
   .hx-calendar-header {
